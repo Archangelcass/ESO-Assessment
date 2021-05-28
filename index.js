@@ -26,8 +26,18 @@ client.on("message", async message => {
     console.log(command);
 
     if (command === `${prefix}hallo`) {
-        console.log("test");
         return message.channel.send("Hallo!");
+       
+    }
+
+    if (command === `${prefix}info`) {
+
+        var botEmbed = new discord.MessageEmbed()
+        .setTitle("Een titel")
+        .setDescription("Hier een beschrijving")
+        .setColor("#0099ff");
+
+        return;
        
     }
 
