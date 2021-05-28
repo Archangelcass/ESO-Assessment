@@ -42,7 +42,8 @@ client.on("message", async message => {
         .setDescription("Deze word gebruikt om zelf informatie te gaan voorzien aan gebruiekrs")
         .setColor("#0099ff")
         .addField("Auteur", message.author.username)
-        .setThumbnail(guildicon);
+        .setThumbnail(guildicon)
+        .setfooter("Deze Embed is geschreven door:"+" "+message.author.username,message.author.displayAvatarURL() );
 
         return message.channel.send(botEmbed);
        
