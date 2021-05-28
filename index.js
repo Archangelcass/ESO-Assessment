@@ -35,7 +35,8 @@ client.on("message", async message => {
         var botEmbed = new discord.MessageEmbed()
         .setTitle("Een titel")
         .setDescription("Hier een beschrijving")
-        .setColor("#0099ff");
+        .setColor("#0099ff")
+        .addField("Hey", message.username);
 
         return message.channel.send(botEmbed);
        
