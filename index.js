@@ -33,10 +33,10 @@ client.on("message", async message => {
     if (command === `${prefix}info`) {
 
         var botEmbed = new discord.MessageEmbed()
-        .setTitle("Een titel")
-        .setDescription("Hier een beschrijving")
+        .setTitle("Dit is een zelf geprogrameerde Message Embed")
+        .setDescription("Deze word gebruikt om zelf informatie te gaan voorzien aan gebruiekrs")
         .setColor("#0099ff")
-        .addField("Hey", message.author.username);
+        .addField("Auteur", message.author.username);
 
         return message.channel.send(botEmbed);
        
