@@ -29,15 +29,17 @@ client.on("message", async message => {
         return message.channel.send("Hallo!");
        
     }
-
+    
     if (command === `${prefix}info`) {
-
+    
+    var guildicon = guild.iconURL();
+    console.log(guildicon)
         var botEmbed = new discord.MessageEmbed()
         .setTitle("Dit is een zelf geprogrameerde Message Embed")
         .setDescription("Deze word gebruikt om zelf informatie te gaan voorzien aan gebruiekrs")
         .setColor("#0099ff")
         .addField("Auteur", message.author.username)
-        .setThumbnail(guild.iconURL());
+        .setThumbnail(guildicon);
 
         return message.channel.send(botEmbed);
        
