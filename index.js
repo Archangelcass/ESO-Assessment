@@ -1,7 +1,7 @@
 const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
 
-const fs = reguire("fs");
+const fs = require("fs");
 
 const bot = new discord.Client();
 bot.commands = new discord.Collection();
