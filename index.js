@@ -1,17 +1,40 @@
 const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
 
-const client = new discord.Client();
-client.login(process.env.token);
+const fs = reguire("fs");
 
-client.on("ready", async () => {
+const bot = new discord.Client();
+bot.commands = new discord.Collection();
 
-    console.log(`${client.user.username} is online,`);
-    client.user.setActivity("Inventarisatie", { type: "Playing" });
+fs.readdir("./commands/", (err, files) => {
+
+    if(error) console.log(error);
+
+    var jsfiles = files.filter(f => f.split(".").pop() === "js");
+
+    if(jsfiles.length <= 0){
+        console.log("Geen files te vinden")
+        return;
+    }
+
+    jsfiles.foreach((f, i) => {
+        var fileGet = require(`./commands/${f}`)
+        console.log(`De file ${f} is geladen`);
+
+        bot.commands.set(fileGet.help.name, fileGet);
+
+    })
+});
+bot.login(process.env.token);
+
+bot.on("ready", async () => {
+
+    console.log(`${bot.user.username} is online,`);
+    bot.user.setActivity("Inventarisatie", { type: "Playing" });
 
 });
 
-client.on("message", async message => {
+bot.on("message", async message => {
 
     if (message.author.bot) return;
 
@@ -23,12 +46,16 @@ client.on("message", async message => {
 
     var command = messageArray[0];
 
+    var commands = bot.commands.get(command.slice(prefix.length))
+
+    if(commands) commands.run(bot,message,command);
+
     console.log(command);
 
-    if (command === `${prefix}hallo`) {
+   /* if (command === `${prefix}hallo`) {
         return message.channel.send("Hallo!");
        
-    }
+    }*/
     
     if (command === `${prefix}info`) {
     
@@ -40,9 +67,8 @@ client.on("message", async message => {
     console.log(guildicon)
         var botEmbed = new discord.MessageEmbed()
         .setTitle("Dit is een zelf geprogrameerde Message Embed")
-        .setDescription("Deze word gebruikt om zelf informatie te gaan voorzien aan gebruiekrs")
+        .setDescription("Deze word gebruikt om zelf informatie te gaan voorzien aan gebruikers")
         .setColor("#0099ff")
-        .addField("Auteur", message.author.username)
         .setThumbnail(guildicon)
         .setFooter("Deze Embed is geschreven door:"+" "+message.author.username,usericon);
 
