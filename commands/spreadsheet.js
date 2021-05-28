@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 const GoogleSpreadsheet  = require('google-spreadsheet');
 
-const doc = GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY');
+var doc = GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY');
 
 
 
