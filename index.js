@@ -32,7 +32,10 @@ client.on("message", async message => {
     
     if (command === `${prefix}info`) {
     
+    var guild = message.guild;
     var guildicon = guild.iconURL();
+
+
     console.log(guildicon)
         var botEmbed = new discord.MessageEmbed()
         .setTitle("Dit is een zelf geprogrameerde Message Embed")
