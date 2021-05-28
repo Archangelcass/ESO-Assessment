@@ -21,7 +21,7 @@ var creds = {
   module.exports.run = async(bot,message,args) =>{
 
     const doc = new GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY');
-    await promisify(doc.useServiceAccountAuth)();
+    await promisify(doc.useServiceAccountAuth)(creds);
     const info = await promisify(doc.getInfo)();
     const sheet = info.worksheets[0];
     console.log(`Title: ${sheet.title}, Rows: ${sheet.rowCount}`)
