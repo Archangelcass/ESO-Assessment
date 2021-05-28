@@ -36,7 +36,8 @@ client.on("message", async message => {
         .setTitle("Dit is een zelf geprogrameerde Message Embed")
         .setDescription("Deze word gebruikt om zelf informatie te gaan voorzien aan gebruiekrs")
         .setColor("#0099ff")
-        .addField("Auteur", message.author.username);
+        .addField("Auteur", message.author.username)
+        .setThumbnail(guild.iconURL());
 
         return message.channel.send(botEmbed);
        
