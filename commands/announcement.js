@@ -15,7 +15,7 @@ module.exports.run = async(bot,message,args) =>{
         //if(message.member.roles.has(allowedRole.id)){
           //  return message.reply(`deze gebruiker is: ${roles}`);
         //}
-       return message.channel.send("Er is maar één <@&" + 843799770153615370 + "> En jij bent dat niet");
+       return message.channel.send("Er is maar één <@&" +"843799770153615370"+ "> En jij bent dat niet");
         }
 
 }
