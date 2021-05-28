@@ -37,7 +37,7 @@ client.on("message", async message => {
         .setDescription("Hier een beschrijving")
         .setColor("#0099ff");
 
-        return;
+        return message.channel.send(botEmbed);
        
     }
 
