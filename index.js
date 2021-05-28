@@ -46,16 +46,11 @@ bot.on("message", async message => {
 
     var command = messageArray[0];
 
+    if(!message.content.startsWith(prefix)) return;
+
     var commands = bot.commands.get(command.slice(prefix.length))
 
     if(commands) commands.run(bot,message,command);
 
     console.log(command);
-
-   /* if (command === `${prefix}hallo`) {
-        return message.channel.send("Hallo!");
-       
-    }*/
-    
-
 });
