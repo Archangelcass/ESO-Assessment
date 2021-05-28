@@ -10,6 +10,14 @@ module.exports.run = async(bot,message,args) =>{
     //}
    console.log("Test");
     }
+    if (!message.member.roles.cache.some(role => role.name === 'De Lelijkste')) {
+    
+        //if(message.member.roles.has(allowedRole.id)){
+          //  return message.reply(`deze gebruiker is: ${roles}`);
+        //}
+       console.log("Er is maar één iemand lelijk");
+        }
+
 }
 
 
