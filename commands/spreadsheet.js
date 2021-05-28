@@ -1,3 +1,5 @@
+const discord = require("discord.js");
+
 const GoogleSpreadsheet = require('google-spreadsheet');
 const { promisify } = require('util');
 
@@ -15,7 +17,7 @@ var creds = {
     "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sheets%40eso-assessment.iam.gserviceaccount.com"
   }
 
-async function accessSpreadsheet(){
+  module.exports.run = async(bot,message,args) =>{
 
     const doc = new GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY');
     await promisify(doc.useServiceAccountAuth)();
@@ -24,6 +26,9 @@ async function accessSpreadsheet(){
     console.log(`Title: ${sheet.title}, Rows: ${sheet.rowCount}`)
 
 
+
 }
 
-accessSpreadsheet();
+module.exports.help = {
+    name: "spreadsheet"
+}
