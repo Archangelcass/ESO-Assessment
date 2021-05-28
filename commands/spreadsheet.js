@@ -1,8 +1,8 @@
 const discord = require("discord.js");
 
-const GoogleSpreadsheet  = require('google-spreadsheet');
+const { GoogleSpreadsheet } = require('google-spreadsheet');
 
-var doc = GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY');
+const doc = new GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY');
 
 
 
@@ -20,9 +20,9 @@ var doc = GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY');
       
 
     await doc.loadInfo(); // loads document properties and worksheets
-    console.log(doc);
-    
+    console.log(doc.title);
 
+    return message.channel.send("Hallo jij bekeek de spreadsheet:"+" "+doc.title);
 
 
 }
