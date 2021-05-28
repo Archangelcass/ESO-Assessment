@@ -21,12 +21,13 @@ const doc = new GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY'
 
     await doc.loadInfo(); // loads document properties and worksheets
     console.log(doc.title);
+    console.log(`Title: ${sheet.title}, Rows: ${sheet.rowCount}`)
 
   /*  const doc = new GoogleSpreadsheet('');
     await promisify(doc.useServiceAccountAuth)(creds);
     const info = await promisify(doc.getInfo)();
     const sheet = info.worksheets[0];
-    console.log(`Title: ${sheet.title}, Rows: ${sheet.rowCount}`)
+    
 */
 
 
