@@ -21,8 +21,7 @@ const doc = new GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY'
 
     await doc.loadInfo(); // loads document properties and worksheets
     console.log(doc.title);
-    const info = await promisify(doc.getInfo)();
-    const sheet = info.worksheets[0];
+    const sheet = doc.worksheets[0];
     console.log(`Title: ${sheet.title}, Rows: ${sheet.rowCount}`);
 
   /*  const doc = new GoogleSpreadsheet('');
