@@ -34,6 +34,7 @@ client.on("message", async message => {
     
     var guild = message.guild;
     var guildicon = guild.iconURL();
+    var usericon = message.author.avatarURL();
 
 
     console.log(guildicon)
@@ -43,7 +44,7 @@ client.on("message", async message => {
         .setColor("#0099ff")
         .addField("Auteur", message.author.username)
         .setThumbnail(guildicon)
-        .setfooter("Deze Embed is geschreven door:"+" "+message.author.username,guildicon);
+        .setFooter("Deze Embed is geschreven door:"+" "+message.author.username,usericon);
 
         return message.channel.send(botEmbed);
        
