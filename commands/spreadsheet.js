@@ -20,9 +20,9 @@ const doc = new GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY'
       
 
     await doc.loadInfo(); // loads document properties and worksheets
-    console.log(doc.title);
+    console.log(doc.spreadsheetId);
+    
 
-    return message.channel.send("Hallo jij bekeek de spreadsheet:"+" "+doc.title);
 
 
 }
