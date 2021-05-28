@@ -4,15 +4,17 @@ const { GoogleSpreadsheet } = require("google-spreadsheet");
 
 const doc = new GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY');
 
-await doc.useServiceAccountAuth({
-    client_email: process.env.client_emailL,
-    private_key: process.env.private_key,
-  });
-  
+
 
 //const creds = require('./client_secret.json');
 
   module.exports.run = async(bot,message,args) =>{
+
+    await doc.useServiceAccountAuth({
+        client_email: process.env.client_emailL,
+        private_key: process.env.private_key,
+      });
+      
 
     await doc.loadInfo(); // loads document properties and worksheets
     console.log(doc.title);
