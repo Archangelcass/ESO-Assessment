@@ -10,8 +10,11 @@ const doc = new GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY'
 
   module.exports.run = async(bot,message,args) =>{
 
+    console.log(process.env.client_email);
+    console.log(process.env.private_key);
+
     await doc.useServiceAccountAuth({
-        client_email: process.env.client_emailL,
+        client_email: process.env.client_email,
         private_key: process.env.private_key,
       });
       
