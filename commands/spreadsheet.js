@@ -35,8 +35,8 @@ async function accessSpreadsheet() {
   console.log(doc.title);
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
-  console.log(sheet.title);
-  console.log(sheet.rowCount);
+  console.log(`Title: ${sheet.title} . Rows: ${sheet.rowCount}`);
+  //console.log(sheet.rowCount);
 
  /*   console.log(process.env.client_email);
     console.log(process.env.private_key);
@@ -51,7 +51,7 @@ async function accessSpreadsheet() {
     console.log(doc.title);
 */
 
-        return message.channel.send("In ieder geval word er iets uitgeprint dus dat is iets ..");
+        return message.channel.send(`Title: ${sheet.title} . Rows: ${sheet.rowCount}`);
 
 
 }
