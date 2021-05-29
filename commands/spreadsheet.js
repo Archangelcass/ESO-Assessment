@@ -9,10 +9,10 @@ const creds = require('./client_secret');
 
 async function accessSpreadsheet(){
   
-  creds.client_email = process.env.client_email;
-  creds.private_key_id = process.env.private_key_id;
-  creds.private_key = process.env.private_key;
-  creds.client_id = process.env.client_id;
+  creds.client_email = process.env.client_email.replace(/\\n/g, '\n');
+  creds.private_key_id = process.env.private_key_id.replace(/\\n/g, '\n');
+  creds.private_key = process.env.private_key.replace(/\\n/g, '\n');
+  creds.client_id = process.env.client_id.replace(/\\n/g, '\n');
 
   
   const doc = new GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY'); 
