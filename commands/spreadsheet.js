@@ -49,9 +49,10 @@ var botEmbed = new discord.MessageEmbed()
 .setDescription("Deze word gebruikt om zelf informatie te gaan voorzien aan/van gebruikers")
 .setColor("#0099ff")
 .setThumbnail(guildicon)
-.setFields(
+.addFields(
   { name: 'Gebruiker', value: `${naam}`},
-  { name: 'level', value: `${level}`})
+  { name: 'level', value: `${level}`},
+  )
 .setFooter("Deze Embed is geschreven door:"+" "+message.author.username,usericon);
 
 return message.channel.send(botEmbed);
