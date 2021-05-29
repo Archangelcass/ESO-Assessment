@@ -37,23 +37,8 @@ async function accessSpreadsheet() {
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
   console.log(`Title: ${sheet.title} . Rows: ${sheet.rowCount} . info: ${sheet.getRows.toString()}`);
   
-  
-  //console.log(sheet.rowCount);
-
- /*   console.log(process.env.client_email);
-    console.log(process.env.private_key);
-    
-    await doc.useServiceAccountAuth({
-        client_email: process.env.client_email,
-        private_key: process.env.private_key.replace(/\\n/g, '\n'),
-      });
-      
-
-    await doc.loadInfo(); // loads document properties and worksheets
-    console.log(doc.title);
-*/
-
-        return message.channel.send(`Title: ${sheet.title} . Rows: ${sheet.rowCount}`);
+  var row1 = sheet.getRows[1].toString();
+        return message.channel.send(`Title: ${sheet.title} . Rows: ${sheet.rowCount} Row 1: ${row1}`);
 
 
 }
