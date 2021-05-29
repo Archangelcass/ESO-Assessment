@@ -47,7 +47,7 @@ async function accessSpreadsheet() {
   var level = row.LVL;
   var dcID = row.DiscordID;
   var user = guild.members.fetch(row.DiscordID);
-  var roles = guild.members.fetch(row.DiscordID).roles.cache;
+  console.log(user);
 
 //  console.log(rows[1]._rawData[2]);
 var botEmbed = new discord.MessageEmbed()
@@ -58,7 +58,7 @@ var botEmbed = new discord.MessageEmbed()
 .addFields(
   { name: 'gebruiker' , value: `<@${dcID}>`},
   { name: 'Gebruiker', value: `${naam}`},
-  { name: 'User Roles', value: `${roles}`},
+ // { name: 'User Roles', value: `${roles}`},
   { name: 'level', value: `${level}`},
   )
 .setFooter("Deze Embed is geschreven door:"+" "+message.author.username,usericon);
