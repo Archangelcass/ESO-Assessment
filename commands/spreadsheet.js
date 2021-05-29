@@ -35,7 +35,7 @@ async function accessSpreadsheet() {
 
   const rows = await sheet.getRows();
 
-  console.log(rows[0]._rawData[1]);
+  console.log(rows[1]._rawData[2]);
   
         
         return message.channel.send(`Title: ${sheet.title} . Rows: ${sheet.rowCount}`);
