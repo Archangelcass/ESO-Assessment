@@ -44,6 +44,7 @@ async function accessSpreadsheet() {
    // console.log(rows[0].Naam);
   var naam = row.Naam; 
   var level = row.LVL;
+  var dcID = row.DiscordID;
 
 //  console.log(rows[1]._rawData[2]);
 var botEmbed = new discord.MessageEmbed()
@@ -52,6 +53,7 @@ var botEmbed = new discord.MessageEmbed()
 .setColor("#0099ff")
 .setThumbnail(guildicon)
 .addFields(
+  { name: 'gebruiker' , value: `<@${dcID}>`},
   { name: 'Gebruiker', value: `${naam}`},
   { name: 'level', value: `${level}`},
   )
