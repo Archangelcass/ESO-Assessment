@@ -67,7 +67,7 @@ return message.channel.send(botEmbed);
         //return message.channel.send(`Info opgezocht over: ${naam}`);
 
 
-}
+//}
 
 module.exports.help = {
     name: "spreadsheet"
