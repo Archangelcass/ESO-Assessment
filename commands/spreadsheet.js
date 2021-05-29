@@ -1,14 +1,30 @@
 const discord = require("discord.js");
 
-const { GoogleSpreadsheet } = require('google-spreadsheet');
+const GoogleSpreadsheet = require('google-spreadsheet');
+const { promisify } = require('util');
 
-const doc = new GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY');
+const creds = require('./client_secret');
 
+
+
+async function accessSpreadsheet(){
+  
+  creds.client_email = process.env.client_email;
+  creds.private_key_id = process.env.private_key_id;
+  creds.private_key = process.env.private_key;
+  creds.client_id = process.env.client_id;
+
+  
+  const doc = new GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY'); 
+    
+}
 
 
 //const creds = require('./client_secret.json');
 
   module.exports.run = async(bot,message,args) =>{
+
+  /*accessSpreadsheet();
 
     console.log(process.env.client_email);
     console.log(process.env.private_key);
@@ -21,7 +37,9 @@ const doc = new GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY'
 
     await doc.loadInfo(); // loads document properties and worksheets
     console.log(doc.title);
+*/
 
+    console.log(creds);
     return message.channel.send("Hallo jij bekeek de spreadsheet:"+" "+doc.title);
 
 
