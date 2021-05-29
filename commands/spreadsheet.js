@@ -24,6 +24,10 @@ async function accessSpreadsheet() {
 }
 
   module.exports.run = async(bot,message,args) =>{
+    
+    var guild = message.guild;
+    var guildicon = guild.iconURL();
+    var usericon = message.author.avatarURL();
 
   accessSpreadsheet();
 
@@ -37,11 +41,22 @@ async function accessSpreadsheet() {
 
    // console.log(rows[0].Naam);
   var naam = rows[0].Naam; 
+  var level = rows[0].LVL;
 
 //  console.log(rows[1]._rawData[2]);
-  
+var botEmbed = new discord.MessageEmbed()
+.setTitle("Dit is een zelf geprogrameerde Message Embed")
+.setDescription("Deze word gebruikt om zelf informatie te gaan voorzien aan/van gebruikers")
+.setColor("#0099ff")
+.setThumbnail(guildicon)
+.setFields(
+  { name: 'Gebruiker', value: `${naam}`},
+  { name: 'level', value: `${level}`})
+.setFooter("Deze Embed is geschreven door:"+" "+message.author.username,usericon);
+
+return message.channel.send(botEmbed);
         
-        return message.channel.send(`Info opgezocht over: ${naam}`);
+        //return message.channel.send(`Info opgezocht over: ${naam}`);
 
 
 }
