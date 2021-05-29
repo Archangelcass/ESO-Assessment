@@ -39,7 +39,7 @@ async function accessSpreadsheet() {
 
   const rows = await sheet.getRows();
 
-  Row = rows.findIndex('0');
+  Row = rows.findIndex(0);
   console.log(Row);
   
   
