@@ -42,8 +42,8 @@ async function accessSpreadsheet() {
   Row = rows.findIndex('0');
   console.log(Row);
   
-  var row1 = sheet.getRows[1].;
-        return message.channel.send(`Title: ${sheet.title} . Rows: ${sheet.rowCount} Row 1: ${row1}`);
+  
+        return message.channel.send(`Title: ${sheet.title} . Rows: ${sheet.rowCount} Row 1: ${Row}`);
 
 
 }
