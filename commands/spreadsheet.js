@@ -38,13 +38,15 @@ async function accessSpreadsheet() {
   console.log(`Title: ${sheet.title} . Rows: ${sheet.rowCount}`);
 
   const rows = await sheet.getRows();
-  rows.forEach(function(row){
-    console.log(row.Naam);
+  //rows.forEach(function(row){
+    row = rows[0];
+   // console.log(row.Naam);
   
    // console.log(rows[0].Naam);
   var naam = row.Naam; 
   var level = row.LVL;
   var dcID = row.DiscordID;
+  var user = guild.members.fetch(row.DiscordID);
 
 //  console.log(rows[1]._rawData[2]);
 var botEmbed = new discord.MessageEmbed()
@@ -55,12 +57,13 @@ var botEmbed = new discord.MessageEmbed()
 .addFields(
   { name: 'gebruiker' , value: `<@${dcID}>`},
   { name: 'Gebruiker', value: `${naam}`},
+  { name: 'User Roles', value: `${user.roles}`},
   { name: 'level', value: `${level}`},
   )
 .setFooter("Deze Embed is geschreven door:"+" "+message.author.username,usericon);
 
 return message.channel.send(botEmbed);
-})       
+}//)       
         //return message.channel.send(`Info opgezocht over: ${naam}`);
 
 
