@@ -46,7 +46,7 @@ async function accessSpreadsheet() {
   var naam = row.Naam; 
   var level = row.LVL;
   var dcID = row.DiscordID;
-  var user = guild.members.fetch(row.DiscordID);
+  const user = ( await guild.members.fetch(row.DiscordID));
   var roles = [];
   roles = user.roles;
 
