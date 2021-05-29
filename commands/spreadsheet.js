@@ -33,9 +33,10 @@ async function accessSpreadsheet() {
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
   console.log(`Title: ${sheet.title} . Rows: ${sheet.rowCount}`);
 
-  doc.getRows(1,function (err, rows){
-    console.log(rows);
-    });
+  const rows = await sheet.getRows();
+
+    console.log(rows[0].Naam);
+   
 
 //  console.log(rows[1]._rawData[2]);
   
