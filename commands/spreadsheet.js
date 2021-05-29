@@ -44,7 +44,7 @@ console.log(`Title: ${sheet.title} . Rows: ${sheet.rowcCount}`);
 */
 
     console.log(creds);
-    return message.channel.send("Hallo jij bekeek de spreadsheet:"+" "+doc.title);
+    return message.channel.send("In ieder geval word er iets uitgeprint dus dat is iets ..");
 
 
 }
