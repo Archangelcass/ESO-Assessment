@@ -47,8 +47,11 @@ async function accessSpreadsheet() {
   var level = row.LVL;
   var dcID = row.DiscordID;
   var user = guild.members.fetch(row.DiscordID);
+  var roles = [];
+  roles = user.roles;
+
  // var roles = user._roles;
-  console.log(user);
+  console.log(roles[0]);
 
 //  console.log(rows[1]._rawData[2]);
 var botEmbed = new discord.MessageEmbed()
