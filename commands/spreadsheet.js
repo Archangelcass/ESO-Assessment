@@ -23,10 +23,6 @@ async function accessSpreadsheet() {
 
 }
 
-
-
-//const creds = require('./client_secret.json');
-
   module.exports.run = async(bot,message,args) =>{
 
   accessSpreadsheet();
@@ -39,7 +35,7 @@ async function accessSpreadsheet() {
 
   const rows = await sheet.getRows();
 
-  console.log(rows[0]);
+  console.log(rows[0]._rawData);
   
         
         return message.channel.send(`Title: ${sheet.title} . Rows: ${sheet.rowCount}`);
