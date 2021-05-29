@@ -40,10 +40,10 @@ async function accessSpreadsheet() {
   const rows = await sheet.getRows();
   rows.forEach(function(row){
     console.log(row.Naam);
-  })
+  
    // console.log(rows[0].Naam);
-  var naam = rows[0].Naam; 
-  var level = rows[0].LVL;
+  var naam = row.Naam; 
+  var level = row.LVL;
 
 //  console.log(rows[1]._rawData[2]);
 var botEmbed = new discord.MessageEmbed()
@@ -58,7 +58,7 @@ var botEmbed = new discord.MessageEmbed()
 .setFooter("Deze Embed is geschreven door:"+" "+message.author.username,usericon);
 
 return message.channel.send(botEmbed);
-        
+})       
         //return message.channel.send(`Info opgezocht over: ${naam}`);
 
 
