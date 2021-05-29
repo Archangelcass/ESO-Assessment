@@ -12,14 +12,12 @@ var creds = require('../client_secret.json');
   creds.client_x509_cert_url = process.env.client_x509_cert_url.replace(/\\n/g, '\n');
   creds.project_id = process.env.project_id.replace(/\\n/g, '\n');
 
-async function accessSpreadsheet(){
-  
-const doc = new GoogleSpreadsheet('1CbuRYQIrwCGrVBWQ_MxONIuaQkHkb2MHp6vLu04alAY'); 
-await promisify(doc.useServiceAccountAuth)(creds);
-const info = await promisify(doc.getInfo)();
-const sheet = info.worksheetsp[0];
-console.log(`Title: ${sheet.title} . Rows: ${sheet.rowcCount}`);
-    
+async function accessSpreadsheet() {
+  await doc.useServiceAccountAuth({
+    client_email: creds.client_email,
+    private_key: creds.private_key,
+  });
+
 }
 
 
@@ -29,6 +27,13 @@ console.log(`Title: ${sheet.title} . Rows: ${sheet.rowcCount}`);
   module.exports.run = async(bot,message,args) =>{
 
   accessSpreadsheet();
+
+  await doc.loadInfo(); // loads document properties and worksheets
+  console.log(doc.title);
+
+  const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
+  console.log(sheet.title);
+  console.log(sheet.rowCount);
 
  /*   console.log(process.env.client_email);
     console.log(process.env.private_key);
@@ -43,8 +48,7 @@ console.log(`Title: ${sheet.title} . Rows: ${sheet.rowcCount}`);
     console.log(doc.title);
 */
 
-    console.log(creds);
-    return message.channel.send("In ieder geval word er iets uitgeprint dus dat is iets ..");
+        return message.channel.send("In ieder geval word er iets uitgeprint dus dat is iets ..");
 
 
 }
