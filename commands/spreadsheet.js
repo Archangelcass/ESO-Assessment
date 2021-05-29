@@ -33,9 +33,11 @@ async function accessSpreadsheet() {
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
   console.log(`Title: ${sheet.title} . Rows: ${sheet.rowCount}`);
 
-  const rows = await sheet.getRows();
+  const rows = await sheet.getRows(1,function (err, rows){
+    console.log(rows);
+    });
 
-  console.log(rows[1]._rawData[2]);
+//  console.log(rows[1]._rawData[2]);
   
         
         return message.channel.send(`Title: ${sheet.title} . Rows: ${sheet.rowCount}`);
