@@ -38,7 +38,9 @@ async function accessSpreadsheet() {
   console.log(`Title: ${sheet.title} . Rows: ${sheet.rowCount}`);
 
   const rows = await sheet.getRows();
-
+  rows.forEach(function(row){
+    console.log(row.Naam);
+  })
    // console.log(rows[0].Naam);
   var naam = rows[0].Naam; 
   var level = rows[0].LVL;
