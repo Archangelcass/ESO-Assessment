@@ -3,7 +3,7 @@ const discord = require("discord.js");
 const GoogleSpreadsheet = require('google-spreadsheet');
 const { promisify } = require('util');
 
-const creds = require('./client_secret');
+const creds = require('./client_secret.json');
 
 
 
