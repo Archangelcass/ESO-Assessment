@@ -35,8 +35,8 @@ async function accessSpreadsheet() {
   console.log(doc.title);
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
-  console.log(`Title: ${sheet.title} . Rows: ${sheet.rowCount}`);
-  var cell = sheet.getCell("A1").value();
+  console.log(`Title: ${sheet.title} . Rows: ${sheet.rowCount} . info: ${sheet.getRows.toString}`);
+  
   
   //console.log(sheet.rowCount);
 
@@ -53,7 +53,7 @@ async function accessSpreadsheet() {
     console.log(doc.title);
 */
 
-        return message.channel.send(`Title: ${sheet.title} . Rows: ${sheet.rowCount} & Je koos voor cell: ${cell}`);
+        return message.channel.send(`Title: ${sheet.title} . Rows: ${sheet.rowCount}`);
 
 
 }
