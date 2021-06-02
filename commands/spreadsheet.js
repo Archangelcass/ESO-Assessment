@@ -70,7 +70,7 @@ var botEmbed = new discord.MessageEmbed()
 return message.channel.send(botEmbed);
 }
 else{
-  return message.channel.send(`Geen goed commando ${args[1]} ${args[0]}`);
+  return message.channel.send(`Geen goed commando ${args}`);
 }}//)       
         //return message.channel.send(`Info opgezocht over: ${naam}`);
 
