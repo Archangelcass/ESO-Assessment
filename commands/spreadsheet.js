@@ -94,9 +94,23 @@ else if(args[1] =="add"){
  await sheet.addRow(newinfo);
 
 
-  return message.channel.send(`Informatie voor gebruiker ${newinfo['0']}`);
+  message.channel.send(`Informatie voor gebruiker ${newinfo['0']}`);
 
+  var botEmbed = new discord.MessageEmbed()
+.setTitle("Het toevoegen van de gebruiker aan de spreadsheet is gelukt")
+.setDescription("Aan ons spreadsheet is volgende informatie toegevoegd:")
+.setColor("#0099ff")
+.setThumbnail(guildicon)
+.addFields(
+  { name: 'Username' , value: `${newinfo['0']}`},
+  { name: 'Level', value: `${newinfo['1']}`},
+ // { name: 'User Roles', value: `${roles}`},
+  )
+.setFooter("Deze Embed is geschreven door:"+" "+message.author.username,usericon);
+
+return message.channel.send(botEmbed);
 }
+
 
 else{
   return message.channel.send(`Geen goed commando ${args}`);
