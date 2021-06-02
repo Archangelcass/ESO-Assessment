@@ -84,13 +84,9 @@ else if(args[1] =="add"){
   newinfo['0'] = "Test";
   if(args[2]){
     newinfo['0'] = args[2];
-
-    const guild = await client.guilds.cache.get(message.guild.id) 
-    guild.members.fetch({
-      query:`${newinfo['0']}`,
-      limit: 1 })
-    const member = discord.GuildMember.first();
-    newinfo['2'] = member.DiscordID;
+    client.users.cache.find(user => user.username === newinfo['0']);
+    console.log(user);
+    newinfo['2'] = user.DiscordID;
 
     }
   
