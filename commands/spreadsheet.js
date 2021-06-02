@@ -85,7 +85,7 @@ else if(args[1] =="add"){
   if(args[2]){
     newinfo['0'] = args[2];
     
-    const user = bot.users.cache.find(user => user.username === newinfo[0]);
+  var user = message.mentions.users.first();
     var userid = user.DiscordID;
     console.log(userid);
       
