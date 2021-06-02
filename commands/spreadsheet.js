@@ -85,11 +85,13 @@ else if(args[1] =="add"){
   if(args[2]){
     newinfo['0'] = args[2];
     }
-  
+ if(args[3]){
+    newinfo['1'] = args[3];
+    }
 
   
   
-  newinfo['1'] = "1000";
+  //newinfo['1'] = "1000";
   newinfo['2'] = "444011622454001664";
  await sheet.addRow(newinfo);
 
