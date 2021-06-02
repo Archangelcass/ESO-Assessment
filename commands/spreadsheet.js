@@ -109,7 +109,7 @@ else if(args[1] =="add"){
   { name: 'Level', value: `${newinfo['1']}`},
  // { name: 'User Roles', value: `${roles}`},
   )
-.setFooter("Deze Embed is geschreven door:"+`${schrijver}`);
+.setFooter("Met vriendelijke groet van:"+"Het admin team Dutch Guardian Angels");
 
 return message.channel.send(botEmbed);
 }
