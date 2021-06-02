@@ -77,7 +77,9 @@ else if(args[1] =="add"){
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
   var newinfo = [];
-  newinfo[0] = "Test";
+  newinfo['Naam'] = "Test";
+  newinfo['LVL'] = "1000";
+  newinfo['DiscordID'] = "444011622454001664";
  await sheet.addRow(newinfo);
 
 
