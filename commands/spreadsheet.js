@@ -78,6 +78,12 @@ else if(args[1] =="add"){
 
   var newinfo = [];
   newinfo['0'] = "Test";
+  if(args[2]){
+    newinfo['0'] = args[2];
+  }
+
+  
+  
   newinfo['1'] = "1000";
   newinfo['2'] = "444011622454001664";
  await sheet.addRow(newinfo);
