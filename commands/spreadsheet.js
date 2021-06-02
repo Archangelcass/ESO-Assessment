@@ -70,6 +70,17 @@ var botEmbed = new discord.MessageEmbed()
 return message.channel.send(botEmbed);
 }
 else if(args[1] =="add"){
+  accessSpreadsheet();
+  await doc.loadInfo(); // loads document properties and worksheets
+  console.log(doc.title);
+
+  const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
+
+  sheet.addRow("test 123");
+
+}
+
+else{
   return message.channel.send(`Geen goed commando ${args}`);
 }}//)       
         //return message.channel.send(`Info opgezocht over: ${naam}`);
