@@ -24,7 +24,7 @@ async function accessSpreadsheet() {
 }
 
   module.exports.run = async(bot,message,args) =>{
-    
+  if(!args[1] || args[1] =="Show"){  
     var guild = message.guild;
     var guildicon = guild.iconURL();
     var usericon = message.author.avatarURL();
@@ -68,7 +68,10 @@ var botEmbed = new discord.MessageEmbed()
 .setFooter("Deze Embed is geschreven door:"+" "+message.author.username,usericon);
 
 return message.channel.send(botEmbed);
-}//)       
+}
+else{
+  return message.channel.send("Geen goed commando");
+}}//)       
         //return message.channel.send(`Info opgezocht over: ${naam}`);
 
 
