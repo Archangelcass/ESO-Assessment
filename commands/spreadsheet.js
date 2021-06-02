@@ -7,6 +7,7 @@ var creds = require('../client_secret.json');
 
 // spreadsheet key is the long id in the sheets URL
 const doc = new GoogleSpreadsheet(process.env.Spreadsheet_ID);
+const client = new discord.client();
 
   creds.client_email = process.env.client_email.replace(/\\n/g, '\n');
   creds.private_key_id = process.env.private_key_id.replace(/\\n/g, '\n');
@@ -84,9 +85,11 @@ else if(args[1] =="add"){
   newinfo['0'] = "Test";
   if(args[2]){
     newinfo['0'] = args[2];
-    discord.users.cache.find(user => user.username === newinfo['0']);
-    console.log(user);
-    newinfo['2'] = user.DiscordID;
+    
+    const user = client.users.cache.find(user => user.username === newinfo[0]);
+    var userid = user.first().DiscordID;
+    console.log(userid);
+      
 
     }
   
