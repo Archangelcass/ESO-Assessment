@@ -24,7 +24,7 @@ async function accessSpreadsheet() {
 }
 
   module.exports.run = async(bot,message,args) =>{
-  if(args[1] =="Show"){  
+  if(args[1] =="Show" || !args[1]){  
     var guild = message.guild;
     var guildicon = guild.iconURL();
     var usericon = message.author.avatarURL();
