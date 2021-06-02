@@ -108,7 +108,7 @@ else if(args[1] =="add"){
   { name: 'Level', value: `${newinfo['1']}`},
  // { name: 'User Roles', value: `${roles}`},
   )
-.setFooter("Deze Embed is geschreven door:"+" `<@444011622454001664>`");
+.setFooter("Deze Embed is geschreven door:"+" `<@!444011622454001664>`");
 
 return message.channel.send(botEmbed);
 }
