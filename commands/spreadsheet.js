@@ -86,8 +86,7 @@ else if(args[1] =="add"){
     newinfo['0'] = args[2];
     
   var user = message.mentions.users.first();
-    var userid = user.DiscordID;
-    console.log(userid);
+    console.log(user.DiscordID);
       
 
     }
