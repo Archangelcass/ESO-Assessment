@@ -74,13 +74,26 @@ else if(args[1] =="add"){
   await doc.loadInfo(); // loads document properties and worksheets
   console.log(doc.title);
 
+  
+
+  
+
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
   var newinfo = [];
   newinfo['0'] = "Test";
   if(args[2]){
     newinfo['0'] = args[2];
-  }
+
+    const guild = await clientInformation.guilds.cache.get(message.guild.id) 
+    guild.members.fetch({
+      query:`${newinfo['0']}`,
+      limit: 1 })
+    const member = discord.GuildMember.first();
+    newinfo['2'] = member.DiscordID;
+
+    }
+  
 
   
   
