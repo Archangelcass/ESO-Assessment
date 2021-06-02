@@ -84,7 +84,7 @@ else if(args[1] =="add"){
   newinfo['0'] = "Test";
   if(args[2]){
     newinfo['0'] = args[2];
-    client.users.cache.find(user => user.username === newinfo['0']);
+    discord.users.cache.find(user => user.username === newinfo['0']);
     console.log(user);
     newinfo['2'] = user.DiscordID;
 
