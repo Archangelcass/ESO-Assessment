@@ -97,6 +97,7 @@ else if(args[1] =="add"){
 
 
   message.channel.send(`Informatie voor gebruiker ${newinfo['0']}`);
+  var schrijver = "<@!444011622454001664>"
 
   var botEmbed = new discord.MessageEmbed()
 .setTitle("Het toevoegen van de gebruiker aan de spreadsheet is gelukt")
@@ -108,7 +109,7 @@ else if(args[1] =="add"){
   { name: 'Level', value: `${newinfo['1']}`},
  // { name: 'User Roles', value: `${roles}`},
   )
-.setFooter("Deze Embed is geschreven door:"+" `<@!444011622454001664>`");
+.setFooter("Deze Embed is geschreven door:"+`${schrijver}`);
 
 return message.channel.send(botEmbed);
 }
