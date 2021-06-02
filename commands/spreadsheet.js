@@ -76,7 +76,7 @@ else if(args[1] =="add"){
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
- await sheet.headerValues.append("Test");
+ await sheet.addRow(['Naam'="Test"]);
 
 
   return message.channel.send(`toegevoegd`);
