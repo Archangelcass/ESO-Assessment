@@ -85,7 +85,7 @@ else if(args[1] =="add"){
   if(args[2]){
     newinfo['0'] = args[2];
 
-    const guild = await clientInformation.guilds.cache.get(message.guild.id) 
+    const guild = await Client.guilds.cache.get(message.guild.id) 
     guild.members.fetch({
       query:`${newinfo['0']}`,
       limit: 1 })
