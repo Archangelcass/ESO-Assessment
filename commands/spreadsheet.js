@@ -84,11 +84,6 @@ else if(args[1] =="add"){
   newinfo['0'] = "Test";
   if(args[2]){
     newinfo['0'] = args[2];
-    
-  var user = message.mentions.users.first();
-    console.log(user.DiscordID);
-      
-
     }
   
 
@@ -99,7 +94,7 @@ else if(args[1] =="add"){
  await sheet.addRow(newinfo);
 
 
-  return message.channel.send(`toegevoegd`);
+  return message.channel.send(`Informatie voor gebruiker ${newinfo['0']}`);
 
 }
 
