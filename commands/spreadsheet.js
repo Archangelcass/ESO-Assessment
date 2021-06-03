@@ -81,8 +81,10 @@ else if(args[1] =="add"){
 
   
 
-  console.log(JSON.stringify(message.mentions.members));
   
+  const map = new Map();
+  map = message.mentions.members;
+  console.log(map);
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
