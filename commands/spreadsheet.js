@@ -70,6 +70,7 @@ var botEmbed = new discord.MessageEmbed()
 return message.channel.send(botEmbed);
 }
 else if(args[1] =="add"){
+  
   accessSpreadsheet();
   await doc.loadInfo(); // loads document properties and worksheets
   console.log(doc.title);
@@ -80,16 +81,17 @@ else if(args[1] =="add"){
   newinfo['0'] = "Test";
   if(args[2]){
     newinfo['0'] = args[2];
+    newinfo['2'] = msg.guild.members.fetch().then(fetchedMembers => { fetchedMembers.filter(member => member)})
   }
-
-  
-  
   newinfo['1'] = "1000";
-  newinfo['2'] = "444011622454001664";
+  //newinfo['2'] = "444011622454001664";
+  
+  
+  
  await sheet.addRow(newinfo);
 
 
-  return message.channel.send(`toegevoegd`);
+ message.channel.send(`toegevoegd`);
 
 }
 
