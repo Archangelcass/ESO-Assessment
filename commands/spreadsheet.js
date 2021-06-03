@@ -81,7 +81,7 @@ else if(args[1] =="add"){
 
   
 
-  let user = message.mentions.members.first();
+  console.log(message.mentions.members);
   
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
