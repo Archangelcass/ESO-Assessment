@@ -70,6 +70,11 @@ var botEmbed = new discord.MessageEmbed()
 return message.channel.send(botEmbed);
 }
 else if(args[1] =="add"){
+
+  var guild = message.guild;
+  var guildicon = guild.iconURL();
+  var usericon = message.author.avatarURL();
+  
   accessSpreadsheet();
   await doc.loadInfo(); // loads document properties and worksheets
   console.log(doc.title);
@@ -97,7 +102,7 @@ else if(args[1] =="add"){
 
 
   message.channel.send(`Informatie voor gebruiker ${newinfo['0']}`);
-  var schrijver = "<@!444011622454001664>"
+
 
   var botEmbed = new discord.MessageEmbed()
 .setTitle("Het toevoegen van de gebruiker aan de spreadsheet is gelukt")
