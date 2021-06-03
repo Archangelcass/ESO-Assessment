@@ -84,7 +84,7 @@ else if(args[1] =="add"){
     newinfo['2'] = msg.guild.members.fetch().then(fetchedMembers => { fetchedMembers.filter(member => member)})
   }
   newinfo['1'] = "1000";
-  //newinfo['2'] = "444011622454001664";
+  newinfo['2'] = "444011622454001664";
   
   
   
