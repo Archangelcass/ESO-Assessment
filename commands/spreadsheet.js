@@ -70,10 +70,13 @@ var botEmbed = new discord.MessageEmbed()
 return message.channel.send(botEmbed);
 }
 else if(args[1] =="add"){
-  
   accessSpreadsheet();
   await doc.loadInfo(); // loads document properties and worksheets
   console.log(doc.title);
+
+  
+
+  
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
@@ -81,19 +84,36 @@ else if(args[1] =="add"){
   newinfo['0'] = "Test";
   if(args[2]){
     newinfo['0'] = args[2];
-    newinfo['2'] = msg.guild.members.fetch().then(fetchedMembers => { fetchedMembers.filter(member => member)})
-  }
-  newinfo['1'] = "1000";
+    }
+ if(args[3]){
+    newinfo['1'] = args[3];
+    }
+
+  
+  
+  //newinfo['1'] = "1000";
   newinfo['2'] = "444011622454001664";
-  
-  
-  
  await sheet.addRow(newinfo);
 
 
- message.channel.send(`toegevoegd`);
+  message.channel.send(`Informatie voor gebruiker ${newinfo['0']}`);
+  var schrijver = "<@!444011622454001664>"
 
+  var botEmbed = new discord.MessageEmbed()
+.setTitle("Het toevoegen van de gebruiker aan de spreadsheet is gelukt")
+.setDescription("Aan ons spreadsheet is volgende informatie toegevoegd:")
+.setColor("#0099ff")
+.setThumbnail(guildicon)
+.addFields(
+  { name: 'Username' , value: `${newinfo['0']}`},
+  { name: 'Level', value: `${newinfo['1']}`},
+ // { name: 'User Roles', value: `${roles}`},
+  )
+.setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
+
+return message.channel.send(botEmbed);
 }
+
 
 else{
   return message.channel.send(`Geen goed commando ${args}`);
