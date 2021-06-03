@@ -74,14 +74,15 @@ else if(args[1] =="add"){
   var guild = message.guild;
   var guildicon = guild.iconURL();
   var usericon = message.author.avatarURL();
-  
+
   accessSpreadsheet();
   await doc.loadInfo(); // loads document properties and worksheets
   console.log(doc.title);
 
   
 
-  
+  let member = message.mentions.members.first() || message.member,
+  user = member.user;
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
@@ -112,6 +113,7 @@ else if(args[1] =="add"){
 .addFields(
   { name: 'Username' , value: `${newinfo['0']}`},
   { name: 'Level', value: `${newinfo['1']}`},
+  { name: 'user Discord roles', value:( member.roles.map(r => `${r}`).join(' | '), true)},
  // { name: 'User Roles', value: `${roles}`},
   )
 .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
