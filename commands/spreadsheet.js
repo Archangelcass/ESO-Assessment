@@ -81,7 +81,7 @@ else if(args[1] =="add"){
 
   
 
-  console.log(message.mentions.members);
+  console.log(message.mentions.members.GuildMember);
   
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
