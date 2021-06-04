@@ -79,9 +79,8 @@ else if(args[1] =="add"){
   await doc.loadInfo(); // loads document properties and worksheets
   console.log(doc.title);
 
-  let member = message.mentions.members;
   
-  console.log(`${member}`);
+  console.log(message.mentions.members.first().nickname);
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
