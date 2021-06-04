@@ -80,7 +80,7 @@ else if(args[1] =="add"){
   console.log(doc.title);
 
   
-  console.log(message.mentions.members.first().roles.first);
+  console.log(message.mentions.members.first());
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
