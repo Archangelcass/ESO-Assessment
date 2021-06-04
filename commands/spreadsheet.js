@@ -79,7 +79,7 @@ else if(args[1] =="add"){
   await doc.loadInfo(); // loads document properties and worksheets
   console.log(doc.title);
 
-  let member = message.mentions.members.first();
+  let member = message.mentions.members;
   
   console.log(`${member}`);
 
