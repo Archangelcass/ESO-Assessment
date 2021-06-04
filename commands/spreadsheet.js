@@ -79,8 +79,9 @@ else if(args[1] =="add"){
   await doc.loadInfo(); // loads document properties and worksheets
   console.log(doc.title);
 
-  
-  console.log(message.mentions.members.first().roles.map(r => `${r}`).join(' | '));
+  let member = message.mentions.members.first();
+  var roles = member.roles.map(r => r).join('|');
+  console.log(`${roles}`);
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
