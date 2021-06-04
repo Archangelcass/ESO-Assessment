@@ -79,7 +79,7 @@ else if(args[1] =="add"){
   await doc.loadInfo(); // loads document properties and worksheets
   console.log(doc.title);
 
-  let member = message.mentions.members.first().roles.join('> <@&');
+  let member = message.mentions.members.first()._roles.join('> <@&');
   
   console.log(`${member}`);
 
