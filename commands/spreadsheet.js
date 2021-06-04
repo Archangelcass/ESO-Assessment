@@ -80,7 +80,7 @@ else if(args[1] =="add"){
   console.log(doc.title);
 
   
-  console.log(message.mentions.members.first().roles.has('829662477393592360'));
+  console.log(message.mentions.members.first().roles.map(r => `${r}`).join(' | '));
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
