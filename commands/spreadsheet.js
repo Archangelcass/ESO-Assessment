@@ -85,7 +85,9 @@ else if(args[1] =="add"){
   roles.forEach(function(role){
     role = roles[rolenumber];
     
+    Rolestring += '<@&'
     Rolestring += role;
+    Rolestring += '>'
     Rolestring += '\n'
 
    console.log(Rolestring)
@@ -122,7 +124,7 @@ else if(args[1] =="add"){
   { name: 'Username' , value: `${newinfo['0']}`},
   { name: 'Level', value: `${newinfo['1']}`},
  // { name: 'user Discord roles', value:( user.roles.map(r => `${r}`).join(' | '), true)},
-  { name: 'User Roles', value: `<@&${Rolestring}>`},
+  { name: 'User Roles', value: `${Rolestring}`},
   )
 .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
 
