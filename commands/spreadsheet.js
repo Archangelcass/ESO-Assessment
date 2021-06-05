@@ -122,7 +122,7 @@ else if(args[1] =="add"){
   { name: 'Username' , value: `${newinfo['0']}`},
   { name: 'Level', value: `${newinfo['1']}`},
  // { name: 'user Discord roles', value:( user.roles.map(r => `${r}`).join(' | '), true)},
- // { name: 'User Roles', value: `${roles}`},
+ { name: 'User Roles', value: `${roles.forEach(function(role){roles[i], i++})}`},
   )
 .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
 
