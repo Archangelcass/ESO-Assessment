@@ -95,9 +95,9 @@ else if(args[1] =="add"){
      rolenumber++;
     }) 
  if(Rolestring){   newinfo['2'] = Rolestring;  }
- console.log(rows.includes(`${newinfo[0]}`))
- await sheet.addRow(newinfo);
-
+ console.log(rows);
+ if (isInArray(rows, newinfo['0'])){console.log("Gebruiker bestaat al.") }
+else{ await sheet.addRow(newinfo); }
 
   message.channel.send(`Informatie voor gebruiker ${newinfo['0']}`);
 
@@ -123,7 +123,9 @@ else{
   return message.channel.send(`Geen goed commando ${args}`);
 }}//)       
         //return message.channel.send(`Info opgezocht over: ${naam}`);
-
+function isInArray(array, search){
+  return array.indexOf(search) >= 0;
+}
 
 //}
 
