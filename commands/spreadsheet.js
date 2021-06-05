@@ -95,9 +95,18 @@ else if(args[1] =="add"){
      rolenumber++;
     }) 
  if(Rolestring){   newinfo['2'] = Rolestring;  }
- console.log(rows);
- if (isInArray(rows, newinfo['0'])){console.log("Gebruiker bestaat al.") }
-else{ await sheet.addRow(newinfo); }
+ 
+ var textFinder = range.createTextFinder(newinfo['0']);
+
+ var occurrences = textFinder.findAll().map(x => x.getA1Notation());
+ if (occurrences == []) {
+  await sheet.addRow(newinfo);
+  // do something if "Sam" not in sheet 
+}
+else {
+  console.log("Gebruiker bestaat al.")
+  // do stuff with each range: 
+}  
 
   message.channel.send(`Informatie voor gebruiker ${newinfo['0']}`);
 
