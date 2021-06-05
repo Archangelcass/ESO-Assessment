@@ -124,7 +124,7 @@ else if(args[1] =="add"){
   { name: 'Username' , value: `${newinfo['0']}`},
   { name: 'Level', value: `${newinfo['1']}`},
  // { name: 'user Discord roles', value:( user.roles.map(r => `${r}`).join(' | '), true)},
-  { name: 'User Roles', value: `${Rolestring}`},
+  { name: 'Gebruiker heeft de volgende roles:', value: `${Rolestring}`},
   )
 .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
 
