@@ -100,7 +100,7 @@ else if(args[1] =="add"){
 
 
   await sheet.addRow(newinfo);
-  // do something if "Sam" not in sheet 
+
 
 
   message.channel.send(`Informatie voor gebruiker ${newinfo['0']}`);
