@@ -38,14 +38,10 @@ async function accessSpreadsheet() {
   const rows = await sheet.getRows();
     row = rows[28];
   
+    console.log(row);
   var naam = row.username; 
   var level = row.LVL;
   var Roles = row.Roles;
-  //const user = ( await guild.members.fetch(row.DiscordID));
-  //var roles = [];
-  //roles = user.roles;
-
- // console.log(roles[0]);
 
 var botEmbed = new discord.MessageEmbed()
 .setTitle("Dit is een zelf geprogrameerde Message Embed")
@@ -53,7 +49,7 @@ var botEmbed = new discord.MessageEmbed()
 .setColor("#0099ff")
 .setThumbnail(guildicon)
 .addFields(
-  { name: 'gebruiker' , value: `<@${naam}>`},
+  { name: 'gebruiker' , value: `${naam}`},
   { name: 'User Roles', value: `${Roles}`},
   { name: 'level', value: `${level}`},
   )
@@ -74,6 +70,7 @@ else if(args[1] =="add"){
   
    
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
+  const rows = await sheet.getRows();
 
   var newinfo = [];
   newinfo['0'] = "Test";
@@ -98,7 +95,7 @@ else if(args[1] =="add"){
      rolenumber++;
     }) 
  if(Rolestring){   newinfo['2'] = Rolestring;  }
-
+ console.log(rows.includes(`${newinfo[0]}`))
  await sheet.addRow(newinfo);
 
 
@@ -114,7 +111,7 @@ else if(args[1] =="add"){
   { name: 'Username' , value: `${newinfo['0']}`},
   { name: 'Level', value: `${newinfo['1']}`},
   //{ name: 'Gebruiker heeft de volgende roles:', value: `${Rolestring}`}
-  { name: 'Gebruiker heeft de volgende roles:', value: `${newinfo['2']}`},
+  //{ name: 'Gebruiker heeft de volgende roles:', value: `${newinfo['2']}`},
   )
 .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
 
