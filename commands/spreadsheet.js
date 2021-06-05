@@ -96,9 +96,10 @@ else if(args[1] =="add"){
     }) 
  if(Rolestring){   newinfo['2'] = Rolestring;  }
  
- var textFinder = range.createTextFinder(newinfo['0']);
+
 
  var range = sheet.getDataRange();
+ var textFinder = range.createTextFinder(newinfo['0']);
  var occurrences = textFinder.findAll().map(x => x.getA1Notation());
  if (occurrences == []) {
   await sheet.addRow(newinfo);
