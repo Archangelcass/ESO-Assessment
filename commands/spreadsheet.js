@@ -81,10 +81,13 @@ else if(args[1] =="add"){
 
   roles = message.mentions.members.first()._roles;
   var rolenumber = 0;
+  var Rolestring = "";
   roles.forEach(function(role){
     role = roles[rolenumber];
-     
-   console.log(role)
+    
+    Rolestring += role;
+
+   console.log(Rolestring)
    rolenumber++;
   })
    
