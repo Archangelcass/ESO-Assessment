@@ -98,10 +98,11 @@ else if(args[1] =="add"){
     roles.forEach(function(role){
       role = roles[rolenumber];
       
+      if(!rolenumber == 0){Rolestring += '\n'}
       Rolestring += '<@&'
       Rolestring += role;
       Rolestring += '>'
-      Rolestring += '\n'
+      
   
      console.log(Rolestring)
      rolenumber++;
