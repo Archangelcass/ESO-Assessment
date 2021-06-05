@@ -86,6 +86,7 @@ else if(args[1] =="add"){
     role = roles[rolenumber];
     
     Rolestring += role;
+    Rolestring += '/n'
 
    console.log(Rolestring)
    rolenumber++;
