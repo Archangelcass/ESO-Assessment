@@ -98,6 +98,7 @@ else if(args[1] =="add"){
  
  var textFinder = range.createTextFinder(newinfo['0']);
 
+ var range = sheet.getDataRange();
  var occurrences = textFinder.findAll().map(x => x.getA1Notation());
  if (occurrences == []) {
   await sheet.addRow(newinfo);
