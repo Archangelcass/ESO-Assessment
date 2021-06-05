@@ -80,10 +80,13 @@ else if(args[1] =="add"){
   console.log(doc.title);
 
   roles = message.mentions.members.first()._roles;
+  var rolenumber = 0;
   roles.forEach(function(role){
-    role = roles;
+    role = roles[rolenumber];
      
-   console.log(role)})
+   console.log(role)
+   rolenumber++;
+  })
    
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
