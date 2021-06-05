@@ -36,7 +36,7 @@ async function accessSpreadsheet() {
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
   const rows = await sheet.getRows();
-    row = rows[30];
+    row = rows.lastIndexOf();
   
   var naam = row.Naam; 
   var level = row.LVL;
@@ -57,7 +57,7 @@ var botEmbed = new discord.MessageEmbed()
   { name: 'User Roles', value: `${roles}`},
   { name: 'level', value: `${level}`},
   )
-.setFooter("Deze Embed is geschreven door:"+" "+message.author.username,usericon);
+  .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
 
 return message.channel.send(botEmbed);
 }
