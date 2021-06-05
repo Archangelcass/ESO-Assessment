@@ -95,8 +95,8 @@ else if(args[1] =="add"){
      rolenumber++;
     }) 
  if(Rolestring){   newinfo['2'] = Rolestring;  }
- console.log(rows);
- if (isInArray(rows, newinfo['0'])){console.log("Gebruiker bestaat al.") }
+ console.log(rows._rawData);
+ if (isInArray(rows._rawData, newinfo['0'])){console.log("Gebruiker bestaat al.") }
 else{ await sheet.addRow(newinfo); }
 
   message.channel.send(`Informatie voor gebruiker ${newinfo['0']}`);
