@@ -41,11 +41,11 @@ async function accessSpreadsheet() {
   var naam = row.username; 
   var level = row.LVL;
   var Roles = row.Roles;
-  const user = ( await guild.members.fetch(row.DiscordID));
-  var roles = [];
-  roles = user.roles;
+  //const user = ( await guild.members.fetch(row.DiscordID));
+  //var roles = [];
+  //roles = user.roles;
 
-  console.log(roles[0]);
+ // console.log(roles[0]);
 
 var botEmbed = new discord.MessageEmbed()
 .setTitle("Dit is een zelf geprogrameerde Message Embed")
@@ -54,7 +54,7 @@ var botEmbed = new discord.MessageEmbed()
 .setThumbnail(guildicon)
 .addFields(
   { name: 'gebruiker' , value: `<@${naam}>`},
-  { name: 'User Roles', value: `${roles}`},
+  { name: 'User Roles', value: `${Roles}`},
   { name: 'level', value: `${level}`},
   )
   .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
