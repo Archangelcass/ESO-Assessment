@@ -82,7 +82,7 @@ else if(args[1] =="add"){
   roles = message.mentions.members.first()._roles;
   var rolenumber = 0;
   var Rolestring = "";
-  /*roles.forEach(function(role){
+  roles.forEach(function(role){
     role = roles[rolenumber];
     
     Rolestring += role;
@@ -91,7 +91,7 @@ else if(args[1] =="add"){
    console.log(Rolestring)
    rolenumber++;
   })
-   */
+   
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
   var newinfo = [];
@@ -122,7 +122,7 @@ else if(args[1] =="add"){
   { name: 'Username' , value: `${newinfo['0']}`},
   { name: 'Level', value: `${newinfo['1']}`},
  // { name: 'user Discord roles', value:( user.roles.map(r => `${r}`).join(' | '), true)},
- { name: 'User Roles', value: `${roles.forEach(function(role){roles[rolenumber], rolenumber++})}`},
+  { name: 'User Roles', value: `<@&${Rolestring}>`},
   )
 .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
 
