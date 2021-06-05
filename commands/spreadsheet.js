@@ -79,20 +79,7 @@ else if(args[1] =="add"){
   await doc.loadInfo(); // loads document properties and worksheets
   console.log(doc.title);
 
-  roles = message.mentions.members.first()._roles;
-  var rolenumber = 0;
-  var Rolestring = "";
-  roles.forEach(function(role){
-    role = roles[rolenumber];
-    
-    Rolestring += '<@&'
-    Rolestring += role;
-    Rolestring += '>'
-    Rolestring += '\n'
-
-   console.log(Rolestring)
-   rolenumber++;
-  })
+  
    
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
@@ -105,10 +92,24 @@ else if(args[1] =="add"){
     newinfo['1'] = args[3];
     }
 
+    roles = message.mentions.members.first()._roles;
+    var rolenumber = 0;
+    var Rolestring = "";
+    roles.forEach(function(role){
+      role = roles[rolenumber];
+      
+      Rolestring += '<@&'
+      Rolestring += role;
+      Rolestring += '>'
+      Rolestring += '\n'
   
-  
-  //newinfo['1'] = "1000";
-  newinfo['2'] = "444011622454001664";
+     //console.log(Rolestring)
+     rolenumber++;
+    }) 
+ if(rolenumber > 1){
+   newinfo['2'] = Rolestring;
+ }
+
  await sheet.addRow(newinfo);
 
 
@@ -123,8 +124,8 @@ else if(args[1] =="add"){
 .addFields(
   { name: 'Username' , value: `${newinfo['0']}`},
   { name: 'Level', value: `${newinfo['1']}`},
- // { name: 'user Discord roles', value:( user.roles.map(r => `${r}`).join(' | '), true)},
-  { name: 'Gebruiker heeft de volgende roles:', value: `${Rolestring}`},
+  //{ name: 'Gebruiker heeft de volgende roles:', value: `${Rolestring}`}
+  { name: 'Gebruiker heeft de volgende roles:', value: `${newinfo['2']}`},
   )
 .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
 
