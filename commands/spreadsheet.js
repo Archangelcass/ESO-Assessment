@@ -32,37 +32,29 @@ async function accessSpreadsheet() {
   accessSpreadsheet();
 
   await doc.loadInfo(); // loads document properties and worksheets
-  console.log(doc.title);
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
-  console.log(`Title: ${sheet.title} . Rows: ${sheet.rowCount}`);
 
   const rows = await sheet.getRows();
-  //rows.forEach(function(row){
-    row = rows[0];
-   // console.log(row.Naam);
+    row = rows[30];
   
-   // console.log(rows[0].Naam);
   var naam = row.Naam; 
   var level = row.LVL;
-  var dcID = row.DiscordID;
+  var Roles = row.Roles;
   const user = ( await guild.members.fetch(row.DiscordID));
   var roles = [];
   roles = user.roles;
 
- // var roles = user._roles;
   console.log(roles[0]);
 
-//  console.log(rows[1]._rawData[2]);
 var botEmbed = new discord.MessageEmbed()
 .setTitle("Dit is een zelf geprogrameerde Message Embed")
-.setDescription("Deze word gebruikt om zelf informatie te gaan voorzien aan/van gebruikers")
+.setDescription("Deze word gebruikt om zelf informatie te gaan voorzien over gebruikers")
 .setColor("#0099ff")
 .setThumbnail(guildicon)
 .addFields(
-  { name: 'gebruiker' , value: `<@${dcID}>`},
-  { name: 'Gebruiker', value: `${naam}`},
- // { name: 'User Roles', value: `${roles}`},
+  { name: 'gebruiker' , value: `<@${naam}>`},
+  { name: 'User Roles', value: `${roles}`},
   { name: 'level', value: `${level}`},
   )
 .setFooter("Deze Embed is geschreven door:"+" "+message.author.username,usericon);
@@ -103,8 +95,6 @@ else if(args[1] =="add"){
       Rolestring += role;
       Rolestring += '>'
       
-  
-     console.log(Rolestring)
      rolenumber++;
     }) 
  if(Rolestring){   newinfo['2'] = Rolestring;  }
@@ -116,7 +106,7 @@ else if(args[1] =="add"){
 
 
   var botEmbed = new discord.MessageEmbed()
-.setTitle("Het toevoegen van de gebruiker aan de spreadsheet is gelukt")
+.setTitle("Toevoegen gebruiker aan overzicht is gelukt")
 .setDescription("Aan ons spreadsheet is volgende informatie toegevoegd:")
 .setColor("#0099ff")
 .setThumbnail(guildicon)
