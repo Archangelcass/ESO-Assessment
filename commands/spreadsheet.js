@@ -77,7 +77,7 @@ else if(args[1] =="add"){
 
   accessSpreadsheet();
   await doc.loadInfo(); // loads document properties and worksheets
-  console.log(doc.title);
+  //console.log(doc.title);
 
   
    
@@ -103,12 +103,10 @@ else if(args[1] =="add"){
       Rolestring += '>'
       Rolestring += '\n'
   
-     //console.log(Rolestring)
+     console.log(Rolestring)
      rolenumber++;
     }) 
- if(rolenumber > 1){
-   newinfo['2'] = Rolestring;
- }
+ if(Rolestring){   newinfo['2'] = Rolestring;  }
 
  await sheet.addRow(newinfo);
 
