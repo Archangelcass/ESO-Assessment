@@ -36,7 +36,7 @@ async function accessSpreadsheet() {
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
   const rows = await sheet.getRows();
-    row = rows.lastIndexOf();
+    row = rows[29];
   
   var naam = row.Naam; 
   var level = row.LVL;
