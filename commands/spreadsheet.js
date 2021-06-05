@@ -34,8 +34,8 @@ async function accessSpreadsheet() {
   await doc.loadInfo(); // loads document properties and worksheets
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
-
   const rows = await sheet.getRows();
+  
     row = rows[1];
   
     console.log(row);
@@ -70,7 +70,7 @@ else if(args[1] =="add"){
   
    
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
-  const rows = await sheet.getRows();
+  const rows = await (await sheet.getRows()).filter();
 
   var newinfo = [];
   newinfo['0'] = "Test";
