@@ -36,7 +36,7 @@ async function accessSpreadsheet() {
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 
   const rows = await sheet.getRows();
-    row = rows[28];
+    row = rows[1];
   
     console.log(row);
   var naam = row.username; 
@@ -99,16 +99,9 @@ else if(args[1] =="add"){
 
 
 
-  var textFinder = sheet.getrows.createTextFinder(newinfo['0']);
- var occurrences = textFinder.findAll().map(x => x.getA1Notation());
- if (occurrences == []) {
   await sheet.addRow(newinfo);
   // do something if "Sam" not in sheet 
-}
-else {
-  console.log("Gebruiker bestaat al.")
-  // do stuff with each range: 
-}  
+
 
   message.channel.send(`Informatie voor gebruiker ${newinfo['0']}`);
 
