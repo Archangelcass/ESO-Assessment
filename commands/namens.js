@@ -31,7 +31,7 @@ module.exports.run = async(bot,message,args) =>{
    
     }
 
-
+    bot.channels.get(channel).send('test');
     return message.channel.send("Hallo!");
 
 
