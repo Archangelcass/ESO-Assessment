@@ -2,6 +2,8 @@ const discord = require("discord.js");
 
 module.exports.run = async(bot,message,args) =>{
 
+    console.log(args);
+
 
     if(args[1]){ 
         console.log('Ik kom hier uberhaupt terecht');
@@ -14,5 +16,5 @@ module.exports.run = async(bot,message,args) =>{
 }
 }
 module.exports.help = {
-    name: "hallo"
+    name: "namens"
 }
