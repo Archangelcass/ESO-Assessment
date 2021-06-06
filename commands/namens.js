@@ -5,7 +5,7 @@ module.exports.run = async(bot,message,args) =>{
 
     if(args[1]){ 
         const channel = client.channels.cache.find(channel => channel.name === args[1])  
-
+        channel.send('test')
 
 
     let filter = (msg) => !msg.author.bot;
@@ -31,7 +31,7 @@ module.exports.run = async(bot,message,args) =>{
    
     }
 
-    bot.channels.get(channel).send('test');
+   
     return message.channel.send("Hallo!");
 
 
