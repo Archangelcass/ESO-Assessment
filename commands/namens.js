@@ -10,10 +10,19 @@ module.exports.run = async(bot,message,args) =>{
         
         var bericht = args.slice(2).join(' ');
 
-        bot.channels.cache.get(args[1]).send(bericht);
         
         
-
+        var botEmbed = new discord.MessageEmbed()
+        .setTitle("Dit is een zelf geprogrameerde Message Embed")
+        .setDescription("Deze word gebruikt om zelf informatie te gaan voorzien over gebruikers")
+        .setColor("#0099ff")
+        .setThumbnail(guildicon)
+        .addFields(
+        { name: 'Bericht van het guild beheer:' , value: `${bericht}`},
+        )
+        .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
+                
+        bot.channels.cache.get(args[1]).send(botEmbed);
         }
 
 
