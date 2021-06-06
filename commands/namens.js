@@ -18,7 +18,7 @@ module.exports.run = async(bot,message,args) =>{
         .setColor("#0099ff")
         .setThumbnail(guildicon)
         .addFields(
-        { name: 'Bericht van het guild beheer:' , value: `${bericht}`},
+        { name: 'Bericht van het Admin team van de guild:' , value: `${bericht}`},
         )
         .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
                 
