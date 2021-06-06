@@ -8,8 +8,8 @@ module.exports.run = async(bot,message,args) =>{
     if(args[1]){ 
         console.log('Ik kom hier uberhaupt terecht');
 
-        var MentionedChannel = message.channels.cache.find(channel.ChannelID === args[1]);
-       console.log(MentionedChannel); 
+       // var MentionedChannel = message.channels.cache.find(channel.ChannelID === args[1]);
+       //console.log(MentionedChannel); 
         
         var bericht = args.shift(2).join();
 
