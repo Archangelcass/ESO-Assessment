@@ -11,7 +11,7 @@ module.exports.run = async(bot,message,args) =>{
         var MentionedChannel = message.channels.cache.find(channel.ChannelID === args[1]);
        console.log(MentionedChannel); 
         
-        var bericht = args.shift(2);
+        var bericht = args.shift(2).join();
 
         bot.channels.cache.get(args[1]).send(bericht);
         
