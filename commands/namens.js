@@ -10,6 +10,7 @@ module.exports.run = async(bot,message,args) =>{
         
         var bericht = args.slice(2);
 
+        bericht.join(" ");
         bot.channels.cache.get(args[1]).send(bericht);
         
         
