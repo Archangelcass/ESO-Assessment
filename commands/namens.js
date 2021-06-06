@@ -16,12 +16,12 @@ module.exports.run = async(bot,message,args) =>{
         
         
         var botEmbed = new discord.MessageEmbed()
-        .setTitle("Dit is een zelf geprogrameerde Message Embed")
-        .setDescription("Deze word gebruikt om zelf informatie te gaan voorzien over gebruikers")
+        .setTitle("Nieuwe guild mededeling.")
+        .setDescription("Graag het onderstaande bericht even doorlezen, dit is een mededeling vanuit het guild beheer.")
         .setColor("#0099ff")
         .setThumbnail(guildicon)
         .addFields(
-        { name: 'Bericht van het Admin team van de guild:' , value: `${bericht}`},
+        { name: 'Bericht:' , value: `${bericht}`},
         )
         .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
                 
