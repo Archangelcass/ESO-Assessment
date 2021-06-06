@@ -24,15 +24,19 @@ module.exports.run = async(bot,message,args) =>{
         { name: 'Bericht:' , value: `${bericht}`},
         )
         .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
-                
-        bot.channels.cache.get(args[1]).send(botEmbed);
+        
+        if (message.guild.me.permissionsIn(bot.channels.cache.get(args[1])).has(['SEND_MESSAGES', 'READ_MESSAGE_HISTORY'])){
+        bot.channels.cache.get(args[1]).send(botEmbed);}
+        else{
+        return message.channel.send("Ik mag hier geen berichten plaatsen");
         }
-
+        
+    
 
     return message.channel.send("Zie het kanaal:"+ " " + message.guild.channels.cache.get(args[1]).toString());
 
 
-
+    }
 }
 module.exports.help = {
     name: "namens"
