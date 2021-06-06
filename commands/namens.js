@@ -3,6 +3,9 @@ const discord = require("discord.js");
 module.exports.run = async(bot,message,args) =>{
 
     console.log(args);
+    var guild = message.guild;
+    var guildicon = guild.iconURL();
+    var usericon = message.author.avatarURL();
 
 
     if(args[1]){ 
