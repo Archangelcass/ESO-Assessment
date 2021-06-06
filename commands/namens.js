@@ -7,13 +7,20 @@ module.exports.run = async(bot,message,args) =>{
 
     if(args[1]){ 
         console.log('Ik kom hier uberhaupt terecht');
-        bot.channels.cache.get(args[1]).send("test bericht");
+        
+        var bericht = args.slice(2);
 
-   
-    return message.channel.send("Hallo!");
+        bot.channels.cache.get(args[1]).send(bericht);
+        
+        
+
+        }
 
 
-}
+    return message.channel.send("Zie het kanaal:"+ " " + message.guild.channels.cache.get(args[1]).toString());
+
+
+
 }
 module.exports.help = {
     name: "namens"
