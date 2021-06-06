@@ -3,7 +3,7 @@ const discord = require("discord.js");
 module.exports.run = async(bot,message,args) =>{
 
 
-    if(!args[1]){ 
+    if(args[1]){ 
         const channel = client.channels.cache.find(channel => channel.name === args[1])  
 
 
