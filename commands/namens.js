@@ -7,7 +7,7 @@ module.exports.run = async(bot,message,args) =>{
 
     if(args[1]){ 
         console.log('Ik kom hier uberhaupt terecht');
-        bot.channels.get(args[1]).send("test bericht");
+        bot.channels.cache.get(args[1]).send("test bericht");
 
    
     return message.channel.send("Hallo!");
