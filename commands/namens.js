@@ -8,9 +8,8 @@ module.exports.run = async(bot,message,args) =>{
     if(args[1]){ 
         console.log('Ik kom hier uberhaupt terecht');
         
-        var bericht = args.slice(2);
+        var bericht = args.slice(2).join(' ');
 
-        bericht.join(" ");
         bot.channels.cache.get(args[1]).send(bericht);
         
         
