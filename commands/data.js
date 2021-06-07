@@ -52,5 +52,5 @@ if(args[1] =="show" || !args[1]){
 //}
 
 module.exports.help = {
-    name: "spreadsheet"
+    name: "data"
 }
