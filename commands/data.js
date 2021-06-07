@@ -1,4 +1,4 @@
-const discord = require("discord.js");
+/*const discord = require("discord.js");
 
 const { google } = require("googleapis.js");
 
@@ -53,4 +53,4 @@ if(args[1] =="show" || !args[1]){
 
 module.exports.help = {
     name: "data"
-}
+}*/
