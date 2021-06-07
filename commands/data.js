@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 
-const {google} = require("googleapis");
+const { google } = require("googleapis.js");
 
 
 const { GoogleSpreadsheet } = require('google-spreadsheet');
