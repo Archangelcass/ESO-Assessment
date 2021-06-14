@@ -122,6 +122,10 @@ else if(args[1] =="add"){
 return message.channel.send(botEmbed);
 }
 
+else if(args[1] =="edit"){
+  
+}
+
 
 else{
   return message.channel.send(`Geen goed commando ${args}`);
