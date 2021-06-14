@@ -30,7 +30,9 @@ module.exports.run = async(bot,message,args) =>{
         
         
         bot.channels.cache.get(args[1]).send(botEmbed);
+        if (Mention != 'Geen'){
         bot.channels.cache.get(args[1]).send(Mention);
+        }
         }
 
 
