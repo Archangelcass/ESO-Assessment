@@ -50,6 +50,11 @@ bot.on("message", async message => {
 
     var commands = bot.commands.get(command.slice(prefix.length))
 
+    if(message.member.roles.cache.has("829662477393592360")) {
+        console.log(`Yay, the author of the message has the role!`);
+      } else {
+        console.log(`Nope, noppers, nadda.`);
+      }
     if(commands) commands.run(bot,message,messageArray);
 
     console.log(command);
