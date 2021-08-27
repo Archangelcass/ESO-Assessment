@@ -9,12 +9,18 @@ module.exports.run = async(bot,message,args) =>{
     var mention = (`<@&${Mention}>`);
     let member = message.mentions.members.first();
 
+    let roleID = "866995362212347914"
+    
+    member.roles.add(roleID).catch(console.error);
+
     console.log(member);
+
+    message.channel.send("Gebruiker:"+''+mention+' '+"Heeft nu de role(s):"+`<@&${roleID}>`+"Extra")
     }
 
     
 
-    return message.channel.send("Message Received");
+    return message.channel.send("");
 
     
 
