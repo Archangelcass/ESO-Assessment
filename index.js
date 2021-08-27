@@ -58,5 +58,6 @@ bot.on("message", async message => {
     console.log(command);
 } else {
     console.log(`Nope, noppers, nadda.`);
+    return message.channel.send(message.member.author, "Jij bent geen Guildleader, deze bot is voor jou niet te gebruiken.");
   }
 });
