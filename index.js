@@ -61,3 +61,4 @@ bot.on("message", async message => {
     return message.reply("Jij bent geen Guildleader, deze bot is voor jou niet te gebruiken.");
   }
 });
+
