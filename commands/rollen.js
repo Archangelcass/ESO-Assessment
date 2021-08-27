@@ -6,7 +6,7 @@ module.exports.run = async(bot,message,args) =>{
 
     if (args[1] == "Verified"){
         if (args[2]){
-    var Mention = args[1];
+    var Mention = args[2];
     let member = message.mentions.members.first();
     
     let AssignedRole1 = "829664202527473695"
