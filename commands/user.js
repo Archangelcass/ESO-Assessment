@@ -4,7 +4,7 @@ module.exports.run = async(bot,message,args) =>{
 
     console.log(args);
 
-    if (args[1] == "Verified"){
+    if (args[1] == "Verify"){
         if (args[2]){
     var Mention = args[2];
     let member = message.mentions.members.first();
