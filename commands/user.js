@@ -25,25 +25,27 @@ module.exports.run = async(bot,message,args) =>{
     message.channel.send("Gebruiker:"+''+Mention+' '+"Heeft nu niet meer de role(s):"+`<@&${RemovedRole1}>`);
     }}
 
-    if (args[1]== "PM"){
+    if (args[1] == "PM"){
      
-        const filter = (m) => m.author.id === message.author.id;
-
-        await message.author.send("Hello here is a PM").then((
-        message.channel.awaitMessages(filter, { max: 1, time: 10000, errors: ['time']})
-        .then((collected) => {
-        console.log(collected.message);
-        })
-        .catch((err) => console.log(err))));
+        const filter = (m) => m.author.id === message.author.id
         
+        message.author.send("Hello here is a PM").then(() => {
+        message.channel.awaitMessages(filter, {
+            max: 1,
+            time: 10000,
+            errors: ['time']
+        })
+        .then( message => {
+            message = message.first();
+            console.log(message); 
+        })
+            .catch(collected => {
+                message.channel.send('Timeout');
+            });
+            return message.channel.send("");
+    })
+
     }
-
-    
-
-    return message.channel.send("");
-
-    
-
 }
 module.exports.help = {
     name: "user"
