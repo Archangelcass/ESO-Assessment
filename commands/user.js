@@ -41,25 +41,6 @@ module.exports.run = async(bot,message,args) =>{
             console.log(message.content); 
          let mentionedmember = message.mentions.first();
          
-
-        })
-        await message.channel.send("Voor welke roles wil je deze gebruiker toekennen?")
-        await message.channel.awaitMessages(filter, {
-            max: 1,
-            time: 10000,
-            errors: ['time']
-        })
-        .then( message => {
-            message = message.first();
-            console.log(message.content); 
-         let mentionedmember = message.mentions.first();
-
-         const args = message.content.substring().split(" ");
-         var argid = 0;
-         args.forEach(arg => {
-          console.log(arg);   
-         });
-
         })
        
             .catch(collected => {
