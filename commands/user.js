@@ -37,7 +37,7 @@ module.exports.run = async(bot,message,args) =>{
         })
         .then( message => {
             message = message.first();
-            console.log(message); 
+            console.log(message.content); 
         })
             .catch(collected => {
                 message.channel.send('Timeout');
