@@ -41,7 +41,7 @@ module.exports.run = async(bot,message,args) =>{
 
     message.channel.send("Gebruiker:"+''+member+' '+"Heeft nu de role(s):"+`<@&${AssignedRole1}>,<@&${AssignedRole2}>,<@&${AssignedRole3}>`+"Extra")
     message.channel.send("Gebruiker:"+''+member+' '+"Heeft nu niet meer de role(s):"+`<@&${RemovedRole1}>`);
-    }}
+    }
 
     if (args[1] == "PM"){
      
@@ -50,6 +50,7 @@ module.exports.run = async(bot,message,args) =>{
        
 
     }
+}
 module.exports.help = {
     name: "user"
 }
