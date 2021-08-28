@@ -27,8 +27,15 @@ module.exports.run = async(bot,message,args) =>{
 
     if (args[1]== "PM"){
      
-        message.author.send("Hello here is a PM");
+        const filter = (m) => m.author.id === message.author.id;
 
+        message.author.send("Hello here is a PM");
+        message.author.awaitMessages(filter, { max: 1, time: 10000, errors: ['time']})
+        .then((collected) => {
+        console.log(collected.message);
+        })
+        .catch((err) => console.log(err));
+        
     }
 
     
