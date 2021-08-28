@@ -29,7 +29,7 @@ module.exports.run = async(bot,message,args) =>{
      
         const filter = (m) => m.author.id === message.author.id
         
-        message.author.send("Hello here is a PM").then(() => {
+        //message.author.send("Hello here is a PM").then(() => {
         message.channel.awaitMessages(filter, {
             max: 1,
             time: 10000,
@@ -43,7 +43,7 @@ module.exports.run = async(bot,message,args) =>{
                 message.channel.send('Timeout');
             });
             return message.channel.send("");
-    })
+        //})
 
     }
 }
