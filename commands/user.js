@@ -38,7 +38,7 @@ module.exports.run = async(bot,message,args) =>{
         .then(collected => {
 
         const response = collected.first();
-         console.log(response.mentions.members.first());
+         console.log(response.mentions.members.first().nickname);
          
         })
             return message.channel.send("");
