@@ -35,14 +35,13 @@ module.exports.run = async(bot,message,args) =>{
             time: 10000,
             errors: ['time']
         })
-        .then( message => {
+        .then(collected => {
 
-         let mentionedmember = message.mentions.first();
-         console.log(mentionedmember);
+        const response = collected.first();
+         console.log(response);
          
         })
-       
-            .catch(collected => {
+               .catch(collected => {
                 message.channel.send('Timeout');
             });
             return message.channel.send("");
