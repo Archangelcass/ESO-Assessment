@@ -41,7 +41,7 @@ module.exports.run = async(bot,message,args) =>{
          console.log(response.mentions.members.first().nickname);
          
         })
-            return message.channel.send("");
+            return message.channel.send("Is deze kut return nou echt de reden van mijn foutmeldingen al de hele tijd?");
        
 
     }
