@@ -30,7 +30,8 @@ module.exports.run = async(bot,message,args) =>{
         const filter = (m) => m.author.id === message.author.id
         
         //message.author.send("Hello here is a PM").then(() => {
-        message.channel.awaitMessages(filter, {
+    await message.channel.send("Welke gebruiker wil je Verifieren?")
+       await message.channel.awaitMessages(filter, {
             max: 1,
             time: 10000,
             errors: ['time']
@@ -38,7 +39,29 @@ module.exports.run = async(bot,message,args) =>{
         .then( message => {
             message = message.first();
             console.log(message.content); 
+         let mentionedmember = message.mentions.first();
+         
+
         })
+        await message.channel.send("Voor welke roles wil je deze gebruiker toekennen?")
+        await message.channel.awaitMessages(filter, {
+            max: 1,
+            time: 10000,
+            errors: ['time']
+        })
+        .then( message => {
+            message = message.first();
+            console.log(message.content); 
+         let mentionedmember = message.mentions.first();
+
+         const args = message.content.substring().split(" ");
+         var argid = 0;
+         args.forEach(arg => {
+          console.log(arg);   
+         });
+
+        })
+       
             .catch(collected => {
                 message.channel.send('Timeout');
             });
