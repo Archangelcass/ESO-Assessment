@@ -29,12 +29,12 @@ module.exports.run = async(bot,message,args) =>{
      
         const filter = (m) => m.author.id === message.author.id;
 
-        message.author.send("Hello here is a PM");
+        await message.author.send("Hello here is a PM").then((
         message.channel.awaitMessages(filter, { max: 1, time: 10000, errors: ['time']})
         .then((collected) => {
         console.log(collected.message);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err))));
         
     }
 
