@@ -24,7 +24,7 @@ module.exports.run = async(bot,message,args) =>{
         .then( message => {
             message = message.first();
             console.log(message.content); 
-            let member = message.mentions.members.first();
+            var member = message.mentions.members.first();
          console.log(mentionedmember);
          
          member.roles.add(AssignedRole1).catch(console.error);
