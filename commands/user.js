@@ -44,8 +44,8 @@ module.exports.run = async(bot,message,args) =>{
         console.log(member);
 
 
-        message.channel.send("Gebruiker:"+''+member.user+' '+"Heeft nu de role(s):"+`<@&${AssignedRole1}>,<@&${AssignedRole2}>,<@&${AssignedRole3}>`+"Extra")
-        message.channel.send("Gebruiker:"+''+member.user+' '+"Heeft nu niet meer de role(s):"+`<@&${RemovedRole1}>`);
+        message.channel.send("Gebruiker:"+''+`${member.user}` +' '+"Heeft nu de role(s):"+`<@&${AssignedRole1}>,<@&${AssignedRole2}>,<@&${AssignedRole3}>`+"Extra")
+        message.channel.send("Gebruiker:"+''+`${member.user}`+' '+"Heeft nu niet meer de role(s):"+`<@&${RemovedRole1}>`);
 
          
          
