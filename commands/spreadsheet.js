@@ -40,58 +40,6 @@ async function accessSpreadsheet() {
 
 return;
 }
-else if(args[1] =="add"){
-
-  var guild = message.guild;
-  var guildicon = guild.iconURL();
-  var usericon = message.author.avatarURL();
-
-  accessSpreadsheet();
-  await doc.loadInfo(); // loads document properties and worksheets
-  //console.log(doc.title);
-
-  
-   
-  const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
-  const rows = await (await sheet.getRows()).filter();
-
-  var newinfo = [];
-  newinfo['0'] = "Test";
-  if(args[2]){
-    newinfo['0'] = args[2];
-    }
- if(args[3]){
-    newinfo['1'] = args[3];
-    }
-
-    roles = message.mentions.members.first()._roles;
-    var rolenumber = 0;
-    var Rolestring = "";
-    roles.forEach(function(role){
-      role = roles[rolenumber];
-      
-      if(!rolenumber == 0){Rolestring += '\n'}
-      Rolestring += '<@&'
-      Rolestring += role;
-      Rolestring += '>'
-      
-     rolenumber++;
-    }) 
- if(Rolestring){   newinfo['2'] = Rolestring;  }
- 
-
-
-
-  await sheet.addRow(newinfo);
-
-
-
-  message.channel.send(`Informatie voor gebruiker ${newinfo['0']}`);
-
-
- 
-return;
-}
 return;
   }
 
