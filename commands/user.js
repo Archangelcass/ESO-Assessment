@@ -6,10 +6,7 @@ module.exports.run = async(bot,message,args) =>{
 
     if (args[1] == "Verify"){
     
-    let AssignedRole1 = "829664202527473695";
-    let AssignedRole2 = "832177644685885440";
-    let AssignedRole3 = "852439559567310879";
-    let RemovedRole1 = "837235279953657887";
+    
     
    
     
@@ -26,6 +23,11 @@ module.exports.run = async(bot,message,args) =>{
             console.log(message.content); 
             var member = message.mentions.members.first();
          console.log(mentionedmember);
+
+    let AssignedRole1 = "829664202527473695";
+    let AssignedRole2 = "832177644685885440";
+    let AssignedRole3 = "852439559567310879";
+    let RemovedRole1 = "837235279953657887";
          
          member.roles.add(AssignedRole1).catch(console.error);
          member.roles.add(AssignedRole2).catch(console.error);
