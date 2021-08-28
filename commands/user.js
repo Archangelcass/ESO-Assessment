@@ -30,7 +30,7 @@ module.exports.run = async(bot,message,args) =>{
         const filter = (m) => m.author.id === message.author.id;
 
         message.author.send("Hello here is a PM");
-        message.author.awaitMessages(filter, { max: 1, time: 10000, errors: ['time']})
+        message.author.dmChannel.awaitMessages(filter, { max: 1, time: 10000, errors: ['time']})
         .then((collected) => {
         console.log(collected.message);
         })
