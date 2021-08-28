@@ -39,23 +39,8 @@ async function accessSpreadsheet() {
     row = rows[1];
   
     console.log(row);
-  var naam = row.username; 
-  var level = row.LVL;
-  var Roles = row.Roles;
 
-var botEmbed = new discord.MessageEmbed()
-.setTitle("Dit is een zelf geprogrameerde Message Embed")
-.setDescription("Deze word gebruikt om zelf informatie te gaan voorzien over gebruikers")
-.setColor("#0099ff")
-.setThumbnail(guildicon)
-.addFields(
-  { name: 'gebruiker' , value: `${naam}`},
-  { name: 'User Roles', value: `${Roles}`},
-  { name: 'level', value: `${level}`},
-  )
-  .setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
-
-return message.channel.send(botEmbed);
+return;
 }
 else if(args[1] =="add"){
 
@@ -106,36 +91,11 @@ else if(args[1] =="add"){
   message.channel.send(`Informatie voor gebruiker ${newinfo['0']}`);
 
 
-  var botEmbed = new discord.MessageEmbed()
-.setTitle("Toevoegen gebruiker aan overzicht is gelukt")
-.setDescription("Aan ons spreadsheet is volgende informatie toegevoegd:")
-.setColor("#0099ff")
-.setThumbnail(guildicon)
-.addFields(
-  { name: 'Username' , value: `${newinfo['0']}`},
-  { name: 'Level', value: `${newinfo['1']}`},
-  //{ name: 'Gebruiker heeft de volgende roles:', value: `${Rolestring}`}
-  //{ name: 'Gebruiker heeft de volgende roles:', value: `${newinfo['2']}`},
-  )
-.setFooter("Met vriendelijke groet:"+" "+"Het admin team Dutch Guardian Angels");
-
-return message.channel.send(botEmbed);
+ 
+return;
 }
-
-else if(args[1] =="edit"){
-  
-}
-
-
-else{
-  return message.channel.send(`Geen goed commando ${args}`);
-}}//)       
-        //return message.channel.send(`Info opgezocht over: ${naam}`);
-function isInArray(array, search){
-  return array.indexOf(search) >= 0;
-}
-
-//}
+return;
+  }
 
 module.exports.help = {
     name: "spreadsheet"
