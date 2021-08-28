@@ -25,6 +25,12 @@ module.exports.run = async(bot,message,args) =>{
     message.channel.send("Gebruiker:"+''+Mention+' '+"Heeft nu niet meer de role(s):"+`<@&${RemovedRole1}>`);
     }}
 
+    if (args[1]== "PM"){
+     
+        message.author.send("Hello here is a PM");
+
+    }
+
     
 
     return message.channel.send("");
