@@ -26,8 +26,6 @@ async function accessSpreadsheet() {
   module.exports.run = async(bot,message,args) =>{
   if(args[1] =="show" || !args[1]){  
     var guild = message.guild;
-    var guildicon = guild.iconURL();
-    var usericon = message.author.avatarURL();
 
   accessSpreadsheet();
 
@@ -36,7 +34,7 @@ async function accessSpreadsheet() {
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
   const rows = await sheet.getRows();
   
-    row = rows[1];
+    row = rows[0];
   
     console.log(row);
 
