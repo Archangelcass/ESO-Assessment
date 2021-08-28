@@ -42,8 +42,8 @@ module.exports.run = async(bot,message,args) =>{
         member.roles.remove(RemovedRole1).catch(console.error);
 
 
-        message.channel.send("Gebruiker:"+''+Mention+' '+"Heeft nu de role(s):"+`<@&${AssignedRole1}>,<@&${AssignedRole2}>,<@&${AssignedRole3}>`+"Extra")
-        message.channel.send("Gebruiker:"+''+Mention+' '+"Heeft nu niet meer de role(s):"+`<@&${RemovedRole1}>`);
+        message.channel.send("Gebruiker:"+''+`<@&${member.user.id}>`+' '+"Heeft nu de role(s):"+`<@&${AssignedRole1}>,<@&${AssignedRole2}>,<@&${AssignedRole3}>`+"Extra")
+        message.channel.send("Gebruiker:"+''+`<@&${member.user.id}>`+' '+"Heeft nu niet meer de role(s):"+`<@&${RemovedRole1}>`);
 
          
          
