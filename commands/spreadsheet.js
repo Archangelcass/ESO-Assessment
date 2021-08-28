@@ -36,7 +36,7 @@ async function accessSpreadsheet() {
   
     row = rows[0];
   
-    console.log(row.username);
+    console.log(rows);
 
 return;
 }
