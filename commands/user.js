@@ -40,6 +40,7 @@ module.exports.run = async(bot,message,args) =>{
             message = message.first();
             console.log(message.content); 
          let mentionedmember = message.mentions.first();
+         console.log(mentionedmember);
          
         })
        
